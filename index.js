@@ -90,11 +90,7 @@ app.use(async (req, res, next) => {
   try {
     res.status(404).format({
       "text/plain"() {
-        res
-          .status(404)
-          .end(
-            `Endpoint not found, get API form https://www.fiverr.com/share/98b4kA`
-          );
+        res.status(404).end(`Endpoint not found, get API form `);
       },
     });
   } catch (error) {
