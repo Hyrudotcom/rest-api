@@ -20,7 +20,9 @@ const divisor = 18; //Decimal of token
 const maxSupply = 100000000; //Max supply of token
 
 let originalText =
-  "0xba8a621b4a54e61c442f5ec623687e2a942225ef,0xf28d87731442a3f252ad4283a39074b5e42e9a90,0x035f210e5d14054e8ae5a6cfa76d643aa200d56e"; //List of address renoved from circulation supply, separate eacch by comma
+  "0x8270879488b9998c324ac235c904f97a30f6738c,0xf28d87731442a3f252ad4283a39074b5e42e9a90,0x035f210e5d14054e8ae5a6cfa76d643aa200d56e";
+
+//List of address renoved from circulation supply, separate eacch by comma
 
 let newText = originalText.replace(/ /g, "");
 
@@ -116,11 +118,7 @@ app.use(async (req, res, next) => {
   try {
     res.status(404).format({
       "text/plain"() {
-        res
-          .status(404)
-          .end(
-            `Endpoint not found, get API form https://www.fiverr.com/share/98b4kA`
-          );
+        res.status(404).end(`Endpoint not found`);
       },
     });
   } catch (error) {
